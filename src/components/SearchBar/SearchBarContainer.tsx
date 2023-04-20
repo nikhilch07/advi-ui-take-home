@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SearchBox from './SearchBar';
 import useMovieVerseStore from '../../store/movieverseStore';
+import { slicePages, sliceMovies } from '../../utils/sliceItems';
 
 const SearchBarContainer = () => {
     const [searchText, setSearchText] = useState('');
@@ -12,7 +13,7 @@ useMovieVerseStore();
       }
 
       const handleSearch = () => {  
-        let searchedMovies = filteredMovies;
+        let searchedMovies = moviesList;
         setCurrentPage(1);
         if(searchText !== ''){
             searchedMovies = moviesList.filter((movie) => 
@@ -20,15 +21,15 @@ useMovieVerseStore();
             value.toString().toLowerCase().includes(searchText.toLocaleLowerCase())))
         }
         setFilteredMovies(searchedMovies);
-        setCurrentMovies(searchedMovies.slice(0,8))
-        setTotalPages(Math.ceil(searchedMovies.length / 8))
+        setCurrentMovies(sliceMovies(searchedMovies))
+        setTotalPages(slicePages(searchedMovies))
         return searchedMovies;
       }
 
       const onCancelSearch= () => {
         setCurrentPage(1);
-        setCurrentMovies(moviesList.slice(0,8))
-        setTotalPages(Math.ceil(moviesList.length / 8))
+        setCurrentMovies(sliceMovies(moviesList))
+        setTotalPages(slicePages(moviesList))
         setFilteredMovies(moviesList)
       } 
 

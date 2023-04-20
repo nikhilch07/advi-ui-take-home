@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useTheme } from '@mui/material/styles';
-import { SelectChangeEvent } from '@mui/material/Select';
-import Filters from './Filters';
-import useFetchGenresList from '../../handlers/useFetchGenresList';
-import useMovieVerseStore from '../../store/movieverseStore';
-import { genreFilter } from '../../utils/applyFilters';
-
+import React from "react";
+import { useTheme } from "@mui/material/styles";
+import { SelectChangeEvent } from "@mui/material/Select";
+import Filters from "./Filters";
+import useFetchGenresList from "../../handlers/useFetchGenresList";
+import useMovieVerseStore from "../../store/movieverseStore";
+import { slicePages, sliceMovies } from "../../utils/sliceItems";
+import { genreFilter } from "../../utils/applyFilters";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -20,8 +20,15 @@ const MenuProps = {
 
 const FiltersContainter = () => {
   const theme = useTheme();
-  const [genresNames, setGenresNames] = useState<string[]>([]);
-  const { moviesList, setFilteredMovies, setCurrentPage, setTotalPages, setCurrentMovies } = useMovieVerseStore();
+  const {
+    moviesList,
+    setFilteredMovies,
+    genreFilterOption,
+    setGenreFilterOption,
+    setCurrentPage,
+    setTotalPages,
+    setCurrentMovies,
+  } = useMovieVerseStore();
   const { genresData } = useFetchGenresList();
 
   const handleChange = (event: SelectChangeEvent<typeof genresNames>) => {
@@ -29,25 +36,25 @@ const FiltersContainter = () => {
     const {
       target: { value },
     } = event;
-    setGenresNames(
-      typeof value === 'string' ? value.split(',') : value,
-    );
-    const getSelectedGenreId = genresData.filter((genre) => value.includes(genre.name)).map((genre) => genre.id);
+    setGenreFilterOption(typeof value === "string" ? value.split(",") : value);
+    const getSelectedGenreId = genresData
+      .filter((genre) => value.includes(genre.name))
+      .map((genre) => genre.id);
     const filterBasedOnGenre = genreFilter(moviesList, getSelectedGenreId);
     setFilteredMovies(filterBasedOnGenre);
-    setCurrentMovies(filterBasedOnGenre.slice(0, 8));
-    setTotalPages(Math.ceil(filterBasedOnGenre.length / 8))
+    setCurrentMovies(sliceMovies(filterBasedOnGenre));
+    setTotalPages(slicePages(filterBasedOnGenre));
   };
 
   return (
     <Filters
       genres={genresData}
-      genresNames={genresNames}
+      genresNames={genreFilterOption}
       changeSelection={handleChange}
       theme={theme}
       MenuProps={MenuProps}
     />
-  )
-}
+  );
+};
 
-export default FiltersContainter
+export default FiltersContainter;

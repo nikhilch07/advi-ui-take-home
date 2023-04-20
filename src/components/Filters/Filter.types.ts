@@ -19,7 +19,7 @@ export interface ContainerProps extends SharedProps {
 export interface Props extends SharedProps {
     filterType: string;
     filterOptions: Options[];
-    selectedOption: string;
+    selectedFilterOption: string;
     handleChange: (event: SelectChangeEvent<string>) => void;
 }
 
