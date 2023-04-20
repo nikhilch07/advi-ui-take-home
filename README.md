@@ -16,6 +16,9 @@ Material-UI,
 Axios,
 TypeScript
 
+API
+MovieDB API
+
 Installation
 To use MovieVerse App locally, you need to follow these steps:
 Clone the repository to your local machine using git clone <repository-url>
@@ -33,3 +36,13 @@ Open the app in your browser
 Use the search bar to search for movies by name
 Use the filters to filter movies based on popularity or release time
 Navigate between pages using the pagination buttons to view all search results
+
+Credits & References
+
+react - https://react.dev/
+Zustand - https://www.npmjs.com/package/zustand
+TanStack Query - https://tanstack.com/
+Material UI - https://mui.com/
+Axios - https://www.npmjs.com/package/axios
+Typescript - https://www.typescriptlang.org/
+MovieDB API - https://developers.themoviedb.org/3/
