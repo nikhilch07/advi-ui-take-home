@@ -26,7 +26,13 @@ const MoviesListPageContainer = () => {
       setCurrentMovies(sliceMovies(results));
       setTotalPages(slicePages(results));
     }
-  }, [moviesData]);
+  }, [
+    moviesData,
+    setCurrentMovies,
+    setFilteredMovies,
+    setTotalPages,
+    setMoviesList,
+  ]);
 
   const clearFilters = () => {
     setRatingFilterOption("");

@@ -6,13 +6,28 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import type { Props } from "./Filter.types";
 
+const sxStyle = {
+  color: "#FDE2F3",
+  '.MuiOutlinedInput-notchedOutline': {
+    borderColor: '#FDE2F3',
+  },
+  '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+    borderColor: '#FDE2F3',
+  },
+  '&:hover .MuiOutlinedInput-notchedOutline': {
+    borderColor: '#FDE2F3',
+  },
+  '.MuiSvgIcon-root ': {
+    fill: "#FDE2F3 !important",
+  }
+}
+
 const Filter = ({
   handleChange,
   filterOptions,
   filterType,
   selectedFilterOption,
 }: Props) => {
-
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
@@ -25,7 +40,7 @@ const Filter = ({
           value={selectedFilterOption}
           label={filterType}
           onChange={handleChange}
-          sx={{ color: "#FDE2F3" }}
+          sx={sxStyle}
         >
           {filterOptions.map(({ label, value }, id) => (
             <MenuItem key={id} value={value}>

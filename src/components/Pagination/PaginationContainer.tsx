@@ -6,10 +6,8 @@ import type { ContainerProps } from "./Pagination.types";
 
 const PaginationContainer = ({ movies, resultsPerPage }: ContainerProps) => {
   const {
-    moviesList,
     setCurrentMovies,
     filteredMovies,
-    setFilteredMovies,
     currentPage,
     setCurrentPage,
     totalPages,

@@ -6,7 +6,6 @@ import { slicePages, sliceMovies } from "../../utils/sliceItems";
 const SearchBarContainer = () => {
   const [searchText, setSearchText] = useState("");
   const {
-    filteredMovies,
     moviesList,
     setFilteredMovies,
     setCurrentPage,

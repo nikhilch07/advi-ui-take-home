@@ -9,6 +9,21 @@ import Chip from "@mui/material/Chip";
 import type { Props } from "./Filters.types";
 import { getStyles } from "../../utils/getStyles";
 
+const sxStyle = {
+  color: "#FDE2F3",
+  '.MuiOutlinedInput-notchedOutline': {
+    borderColor: '#FDE2F3',
+  },
+  '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+    borderColor: '#FDE2F3',
+  },
+  '&:hover .MuiOutlinedInput-notchedOutline': {
+    borderColor: '#FDE2F3',
+  },
+  '.MuiSvgIcon-root ': {
+    fill: "#FDE2F3 !important",
+  }
+}
 const Filters = ({
   genres,
   genresNames,
@@ -28,7 +43,7 @@ const Filters = ({
           multiple
           value={genresNames}
           onChange={changeSelection}
-          sx={{ color: "#FDE2F3" }}
+          sx={sxStyle}
           input={
             <OutlinedInput
               id="select-multiple-chip"
