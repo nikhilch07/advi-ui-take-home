@@ -12,7 +12,7 @@ interface UseFetchMoviesList {
 const useFetchMoviesList = (): UseFetchMoviesList => {
     const API_KEY = process.env.REACT_APP_MOVIES_API_KEY;
     const { data=[], error, isLoading } = useQuery(["moviesList"], async () => {
-        const response = await axios.get(`${BASE_URL}/day?api_key=${API_KEY}`)
+        const response = await axios.get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}`)
         return response.data;
     });
         return {

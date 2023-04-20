@@ -8,7 +8,7 @@ import { Filter as TrendingFilter } from "../Filters";
 import { Filter as RatingFilter } from "../Filters";
 import { SearchBar } from "../SearchBar";
 import { Filters } from "../MultiFilters";
-import useFetchMoviesList from "handlers/useFetchMoviesList";
+import useFetchMoviesList from "../../handlers/useFetchMoviesList";
 import {
   RATING_FILTER_OPTIONS,
   TRENDING_FILTER_OPTIONS,

@@ -35,6 +35,6 @@ const RATING_FILTER_OPTIONS = {
     ],
   };
 
-const BASE_URL='https://api.themoviedb.org/3/trending/movie'
+const BASE_URL='https://api.themoviedb.org/3'
 
   export { MOVIE_POSTER_PREFIXURL, RATING_FILTER_OPTIONS, TRENDING_FILTER_OPTIONS, BASE_URL }

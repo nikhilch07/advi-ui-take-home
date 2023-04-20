@@ -10,8 +10,9 @@ interface UseFetchGenresList {
 }
 
 const useFetchGenresList = (): UseFetchGenresList => {
+    const API_KEY = process.env.REACT_APP_MOVIES_API_KEY;
     const { data=[], error, isLoading } = useQuery(["genresList"], async () => {
-        const response = await axios.get(`${BASE_URL}/list?api_key=&language=en-US`)
+        const response = await axios.get(`${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`)
         return response.data;
     });
     return {
