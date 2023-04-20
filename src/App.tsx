@@ -3,7 +3,6 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import './App.css';
 import Navbar from './NavBar/Navbar';
 import Footer from './Footer/Footer';
@@ -19,7 +18,6 @@ const App = () => {
       </header>
       <Footer />
     </div>
-    <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }

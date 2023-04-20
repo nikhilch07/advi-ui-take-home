@@ -1,50 +1,35 @@
-# Getting Started with Create React App
+MovieVerse App Readme
+MovieVerse is a web application that allows users to search for movies and filter them based on various criteria. It displays movie results in the form of list cards, which include the movie name and rating. The app also provides filtering options to help users find movies based on their popularity and release time.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+Search for movies using the search bar option
+Filter movies based on their popularity and release period
+Paginated results to view a large number of movies in a systematic manner
+Movie list cards that display movie name and rating
+User-friendly and easy-to-use interface
 
-## Available Scripts
+Technologies
+React
+Zustand
+TanStack Query
+Material-UI
+Axios
+TypeScript
 
-In the project directory, you can run:
+Installation
+To use MovieVerse App locally, you need to follow these steps:
+Clone the repository to your local machine using git clone <repository-url>
+Install dependencies using npm install
 
-### `npm start`
+Before starting the server you need to update API_KEY for MOVIESDB API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### API KEY FOR MOVIES DB API - 49253d64602965d240c46635131e4f37
-
+API KEY FOR MOVIES DB API - 49253d64602965d240c46635131e4f37
 Place this API key in your .env file or you can hardcode it in useFetchMoviesList.ts and useFetchGenres.ts files for API call.
 
-### `npm test`
+Start the app using npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Usage
+Open the app in your browser
+Use the search bar to search for movies by name
+Use the filters to filter movies based on popularity or release time
+Navigate between pages using the pagination buttons to view all search results
