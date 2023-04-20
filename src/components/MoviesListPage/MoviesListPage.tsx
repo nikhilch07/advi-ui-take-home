@@ -51,7 +51,7 @@ const MoviesListPage = ({ movies, clearFilters }: Props) => {
               variant="contained"
               onClick={clearFilters}
               endIcon={<ClearAllOutlinedIcon />}
-              sx={{ backgroundColor: "#917FB3"}}
+              sx={{ backgroundColor: "#917FB3" }}
             >
               Clear all
             </Button>

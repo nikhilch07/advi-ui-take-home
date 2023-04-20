@@ -60,7 +60,8 @@ const useMovieVerseStore = create<MovieVersetore>((set) => ({
   setTrendingFilterOption: (trendingFilterOption: string) =>
     set({ trendingFilterOption }),
   genreFilterOption: [],
-  setGenreFilterOption: (genreFilterOption: string[]) => set({ genreFilterOption }),
+  setGenreFilterOption: (genreFilterOption: string[]) =>
+    set({ genreFilterOption }),
   currentPage: 1,
   setCurrentPage: (currentPage: number) => set({ currentPage }),
   totalPages: 0,

@@ -31,7 +31,7 @@ const FiltersContainter = () => {
   } = useMovieVerseStore();
   const { genresData } = useFetchGenresList();
 
-  const handleChange = (event: SelectChangeEvent<typeof genresNames>) => {
+  const handleChange = (event: SelectChangeEvent<typeof genreFilterOption>) => {
     setCurrentPage(1);
     const {
       target: { value },

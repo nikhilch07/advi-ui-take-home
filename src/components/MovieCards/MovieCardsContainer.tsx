@@ -1,6 +1,6 @@
 import React from "react";
 import MovieCards from "./MovieCards";
-import type { ContainerProps } from './MovieCards.types';
+import type { ContainerProps } from "./MovieCards.types";
 import { Grid } from "@mui/material";
 
 const MovieCardsContainer = ({ movies }: ContainerProps) => {

@@ -15,7 +15,7 @@ const MoviesListPageContainer = () => {
     setCurrentMovies,
     setRatingFilterOption,
     setTrendingFilterOption,
-    setGenreFilterOption
+    setGenreFilterOption,
   } = useMovieVerseStore();
 
   useEffect(() => {

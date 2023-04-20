@@ -2,7 +2,6 @@ import { Theme } from "@mui/material/styles";
 import { SelectChangeEvent } from "@mui/material/Select";
 import { Genres } from "../../store/movieverseStore";
 
-
 interface MenuProps {
   PaperProps: {
     style: {

@@ -18,7 +18,7 @@ const Filters = ({
 }: Props) => {
   return (
     <div>
-      <FormControl sx={{ width: '100%' }}>
+      <FormControl sx={{ width: "100%" }}>
         <InputLabel id="demo-multiple-chip-label" sx={{ color: "#FDE2F3" }}>
           Genre
         </InputLabel>
@@ -39,7 +39,11 @@ const Filters = ({
           renderValue={(selected) => (
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
               {(selected as unknown as string[]).map((value: string) => (
-                <Chip key={value} label={value} sx={{ color: "#FDE2F3" , backgroundColor: "#917FB3" }} />
+                <Chip
+                  key={value}
+                  label={value}
+                  sx={{ color: "#FDE2F3", backgroundColor: "#917FB3" }}
+                />
               ))}
             </Box>
           )}
