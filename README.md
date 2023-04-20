@@ -9,11 +9,11 @@ Movie list cards that display movie name and rating
 User-friendly and easy-to-use interface
 
 Technologies
-React
-Zustand
-TanStack Query
-Material-UI
-Axios
+React,
+Zustand,
+TanStack Query,
+Material-UI,
+Axios,
 TypeScript
 
 Installation
