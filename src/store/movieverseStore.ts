@@ -2,7 +2,7 @@ import { create } from 'zustand'
 
 export interface ResponseTypes {
     page?: number;
-    results?: MovieDetails[];
+    results: MovieDetails[];
     total_pages?: number;
     total_results?: number;
 }
@@ -30,17 +30,12 @@ export interface SelectedGenres {
 }
 
 export interface MovieVersetore {
-    movieDataResponse: ResponseTypes;
     moviesList: MovieDetails[];
     setMoviesList: (movieList: MovieDetails[]) => void;
     genres: Genres[];
     setGenres: (genres: Genres[]) => void;
-    selectedGenres: SelectedGenres["results"];
-    setSelectedGenres: (selectedGenres: SelectedGenres["results"]) => void;
-    selectedGenresIds: number[];
     currentMovies: MovieDetails[];
     setCurrentMovies: (currentMovies: MovieDetails[]) => void;
-    setSelectedGenresIds: (selectedGenresIds: number[]) => void;
     filteredMovies: MovieDetails[];
     setFilteredMovies: (filteredMovies: MovieDetails[]) => void;
     currentPage: number;
@@ -50,19 +45,12 @@ export interface MovieVersetore {
 }
 
 const useMovieVerseStore = create<MovieVersetore>((set) => ({
-    movieDataResponse: {
-        results: [],
-    },
     moviesList: [],
     setMoviesList: (moviesList: MovieDetails[]) => set({ moviesList }),
     genres: [],
     setGenres: (genres: Genres[]) => set({ genres }),
-    selectedGenres: [],
-    setSelectedGenres: (selectedGenres: SelectedGenres["results"]) => set({ selectedGenres }),
     currentMovies: [],
     setCurrentMovies: (currentMovies: MovieDetails[]) => set({ currentMovies }),
-    selectedGenresIds: [],
-    setSelectedGenresIds: (selectedGenresIds: number[]) => set({ selectedGenresIds }),
     filteredMovies: [],
     setFilteredMovies: (filteredMovies: MovieDetails[]) => set({ filteredMovies }),
     currentPage: 1,

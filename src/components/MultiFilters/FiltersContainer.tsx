@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material/styles';
 import { SelectChangeEvent } from '@mui/material/Select';
 import Filters from './Filters';
 import useFetchGenresList from '../../handlers/useFetchGenresList';
-import useMovieVerseStore  from '../../store/movieverseStore';
+import useMovieVerseStore from '../../store/movieverseStore';
 import { genreFilter } from '../../utils/applyFilters';
 
 
@@ -34,20 +34,18 @@ const FiltersContainter = () => {
     );
     const getSelectedGenreId = genresData.filter((genre) => value.includes(genre.name)).map((genre) => genre.id);
     const filterBasedOnGenre = genreFilter(moviesList, getSelectedGenreId);
-
     setFilteredMovies(filterBasedOnGenre);
-    setCurrentMovies(filterBasedOnGenre.slice(0,8));
-    console.log('filterbasedongenre', Math.ceil(filterBasedOnGenre.length / 8));
+    setCurrentMovies(filterBasedOnGenre.slice(0, 8));
     setTotalPages(Math.ceil(filterBasedOnGenre.length / 8))
   };
 
   return (
-    <Filters 
-    genres={genresData} 
-    genresNames={genresNames}
-    changeSelection={handleChange}
-    theme={theme}
-    MenuProps={MenuProps}
+    <Filters
+      genres={genresData}
+      genresNames={genresNames}
+      changeSelection={handleChange}
+      theme={theme}
+      MenuProps={MenuProps}
     />
   )
 }

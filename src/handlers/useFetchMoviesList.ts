@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { ResponseTypes } from "../store/store";
+import { ResponseTypes } from "../store/movieverseStore";
 import { BASE_URL } from '../constants';
 
 interface UseFetchMoviesList {

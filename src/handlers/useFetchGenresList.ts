@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { Genres } from "../store/store";
+import { Genres } from "../store/movieverseStore";
 import { BASE_URL } from "../constants";
 
 interface UseFetchGenresList {
